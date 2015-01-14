@@ -12,9 +12,9 @@ interface ChatRoomRepo extends CrudRepository<ChatRoom, Long> {
 
 	Iterable<ChatRoom> findAll()
 
-	@RestResource(path="memberAlias")
+	@RestResource(path="memberAlias", rel = "memberAlias")
 	Iterable<ChatRoom> findByMembers_AliasIgnoreCaseContaining(@Param("alias") String a)
 
-	@RestResource(path="roomName")
+	@RestResource(path="roomName", rel = "roomName")
 	Iterable<ChatRoom> findByRoomNameIgnoreCaseContaining(@Param("name") String n)
 }

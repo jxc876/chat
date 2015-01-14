@@ -3,13 +3,18 @@ package org.mramirez.repo
 import org.mramirez.model.ChatRoom
 import org.springframework.data.repository.CrudRepository
 import org.springframework.data.repository.query.Param
+import org.springframework.data.rest.core.annotation.Description
+import org.springframework.data.rest.core.annotation.RepositoryRestResource
+import org.springframework.data.rest.core.annotation.RestResource
 
 
 interface ChatRoomRepo extends CrudRepository<ChatRoom, Long> {
 
-	//	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	Iterable<ChatRoom> findAll()
 
-	// http://localhost:8080/chatRooms/search/
-	Iterable<ChatRoom> findByMembers_Alias(@Param("alias") String alias)
+	@RestResource(path="memberAlias")
+	Iterable<ChatRoom> findByMembers_AliasIgnoreCaseContaining(@Param("alias") String a)
+
+	@RestResource(path="roomName")
+	Iterable<ChatRoom> findByRoomNameIgnoreCaseContaining(@Param("name") String n)
 }

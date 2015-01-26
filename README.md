@@ -15,7 +15,7 @@ Instructions:
 ** Navigate to : http://localhost:8080
 
 * The database is accessible from:
-** http://localhost:8082/ 
+** http://localhost:8082 
 
 * Sample data is provided in: src/main/resources/data.js
 

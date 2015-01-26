@@ -2,11 +2,12 @@ package org.mramirez.model
 
 import groovy.transform.ToString
 
-import javax.persistence.ElementCollection
+import javax.persistence.CascadeType
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
 import javax.persistence.Id
 import javax.persistence.ManyToMany
+import javax.persistence.OneToMany
 
 @Entity
 @ToString
@@ -20,6 +21,6 @@ class ChatRoom {
 	@ManyToMany
 	Set<Member> members
 
-	@ElementCollection
-	List<String> history
+	@OneToMany(cascade=CascadeType.ALL)
+	List<Message> history
 }

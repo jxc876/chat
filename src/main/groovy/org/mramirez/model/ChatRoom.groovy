@@ -21,6 +21,6 @@ class ChatRoom {
 	@ManyToMany
 	Set<Member> members
 
-	@OneToMany(cascade=CascadeType.ALL)
+	@OneToMany(mappedBy="room")
 	List<Message> history
 }

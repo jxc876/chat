@@ -46,3 +46,10 @@ DELETE http://localhost:8080/chatRooms/1/members/3
 No Content
 
 
+
+// Set MESSAGES for a CHATROOM
+----------------------------
+PATCH http://localhost:8080/chatRooms/1
+{
+    "history": [{"text" : "hello world"}, {"text": "another messsage"}]
+}

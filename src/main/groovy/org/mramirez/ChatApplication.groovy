@@ -14,7 +14,6 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 @EnableJpaRepositories
-@Import(RepositoryRestMvcConfiguration.class)
 @SpringBootApplication
 class ChatApplication {
 
